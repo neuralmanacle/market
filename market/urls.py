@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+app_name = "item"
 from core.views import index, contact
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",index,name='index'),
-    path("contact/",contact,name='contact'),
+    path("",index,namespace='index'),
+    path("contact/",contact,namespace='contact'),
 ]
